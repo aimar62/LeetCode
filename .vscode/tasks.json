@@ -1,0 +1,25 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "gcc.exe build active file",
+            "command": "C:\\MinGw\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "F:\\Code\\00_VsCodePrj\\00_LeetCode\\atoi.c",
+                "F:\\Code\\00_VsCodePrj\\00_LeetCode\\AvlTree.c",
+                "F:\\Code\\00_VsCodePrj\\00_LeetCode\\binarySearch.c",
+                "F:\\Code\\00_VsCodePrj\\00_LeetCode\\stringEncode.c", 
+                "F:\\Code\\00_VsCodePrj\\00_LeetCode\\stockSpan_901.c", 
+                "F:\\Code\\00_VsCodePrj\\00_LeetCode\\largest_rectangle_in_histogram_84.c",     
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:\\MinGw\\mingw64\\bin"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}

@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "type_traits": "c",
+        "limits": "c",
+        "climits": "c",
+        "cmath": "c",
+        "cstdarg": "c",
+        "cstdio": "c",
+        "cstdlib": "c",
+        "*.tcc": "c",
+        "typeinfo": "c",
+        "stdlib.h": "c",
+        "stdbool.h": "c",
+        "stringencode.h": "c",
+        "atoi.h": "c",
+        "binarysearch.h": "c",
+        "stockspan_901.h": "c",
+        "string.h": "c",
+        "largest_rectangle_in_histogram_84.h": "c"
+    }
+}
