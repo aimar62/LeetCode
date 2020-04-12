@@ -8,7 +8,7 @@
 
 #ifndef _AVL_TREE_H_
 #define _AVL_TREE_H_
-
+#if 0
 typedef struct {
     int num;
     int value;
@@ -24,4 +24,5 @@ typedef struct AvlTreeNode{
 
 extern AvlTreeNode* AvlTreeInsert(int data, AvlTreeNode* root);
 extern int* topKFrequent(int* nums, int numsSize, int k, int* returnSize);
+#endif
 #endif

@@ -18,48 +18,83 @@
 区间要向左缩小，逼近左区间的时候，为了保持右区间
 的开放性，故 right = mid。而不是right = mid - 1.这样就是
 */
-int findLeftSpace(int* in, int len, int target)
+
+
+
+int BinarySearchLeft(int* in, int size, int target) 
 {
     int left = 0;
-    int right = len;
+    int right = size;
     int mid;
-    if (len <= 1) {
-        return 0;
-    }
+    int pos;
     while (left < right) {
         mid = (left + right) / 2;
         if (in[mid] == target) {
-            right = mid; //右的开放性，找到第一个目标，则需要将左移动
-        } else if (in[mid] < target) {
-            left = mid + 1;
-        } else if (in[mid] > target) {
-            right = mid; //比目标大，
-        }
-    }
-    return left;
-}
-
-int findRightSpace(int* in, int len, int target)
-{
-    int left = 0;
-    int right = len - 1;
-    int mid;
-    if (len <= 1) {
-        return 0;
-    } 
-
-    while (left < right) {
-        mid = (left + right) / 2;
-        if (in[mid] == target) {
-            left = mid + 1;
-        } else if (in[mid] < target) {
-            left = mid +1;
-        } else if (in[mid] > target) {
             right = mid;
+        } else if (in[mid] > target){
+            right = mid;
+        } else if(in[mid] < target) {
+            left = mid + 1;
         }
     }
-    return right - 1;
+    if (left == size) {
+        return -1;
+    }
+    pos = (in[left] == target) ? left : -1;
+    return pos;
 }
+
+
+int BinarySearchRight(int* in, int size, int target) 
+{
+    int left = 0;
+    int right = size;
+    int mid;
+    int pos;
+    while (left < right) {
+        
+        mid = (left + right) / 2;
+        if (in[mid] == target) {
+            left = mid + 1;
+        } else if (in[mid] > target){
+            right = mid;
+        } else if(in[mid] < target) {
+            left = mid + 1;
+        }
+    }
+    if (left > size) {
+        return -1;
+    }
+    if (left == 0) {
+        pos = (in[left] == target) ? (left) : (-1);
+        return pos;
+    }
+    pos = (in[left - 1] == target) ? (left - 1) : (-1);
+    return pos;
+}
+
+
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* searchRange(int* nums, int numsSize, int target, int* returnSize)
+{
+    int* out = (int*)malloc(sizeof(int)*2);
+    if ((nums == NULL) || (numsSize == 0)) {
+        out[0] = -1;
+        out[1] = -1;
+        *returnSize = 2;
+        return out;
+    }
+    int left = BinarySearchLeft(nums, numsSize, target);
+    int right = BinarySearchRight(nums, numsSize, target);
+    
+    out[0] = left;
+    out[1] = right;
+    *returnSize = 2;
+    return out;
+}
+
 #if 0
 
 int main()

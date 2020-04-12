@@ -4,7 +4,7 @@
 #include "stdbool.h"
 #include "AvlTree.h"
 
-
+#if 0
 int CalHeight(AvlTreeNode* x)
 {
     int leftHeight = 0;
@@ -162,7 +162,7 @@ int* topKFrequent(int* nums, int numsSize, int k, int* returnSize)
     return out;
 }
 
-#if 0
+
 
 int main()
 {

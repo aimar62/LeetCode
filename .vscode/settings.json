@@ -16,6 +16,7 @@
         "binarysearch.h": "c",
         "stockspan_901.h": "c",
         "string.h": "c",
-        "largest_rectangle_in_histogram_84.h": "c"
+        "largest_rectangle_in_histogram_84.h": "c",
+        "avltree.h": "c"
     }
 }
